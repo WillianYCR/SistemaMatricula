@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/04/2014 12:29:48 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="dev.com.matricula.model.UsuarioDocente" table="usuariodocente" catalog="bdmatricula">
+        <id name="idUsuarioDocente" type="java.lang.Integer">
+            <column name="IdUsuarioDocente" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="docente" class="dev.com.matricula.model.Docente" fetch="select">
+            <column name="IdDocente" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="dev.com.matricula.model.Usuario" fetch="select">
+            <column name="IdUsuario" not-null="true" />
+        </many-to-one>
+        <property name="estado" type="java.lang.Character">
+            <column name="Estado" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

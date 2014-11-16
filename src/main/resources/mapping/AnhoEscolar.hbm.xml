@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/04/2014 12:29:48 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="dev.com.matricula.model.AnhoEscolar" table="anhoEscolar" catalog="bdmatricula">
+        <id name="idAnhoEscolar" type="string">
+            <column name="IdAnhoEscolar" length="4" />
+            <generator class="assigned" />
+        </id>
+        <property name="fechaInicial" type="date">
+            <column name="FechaInicial" length="10" not-null="true" />
+        </property>
+        <property name="fechaFinal" type="date">
+            <column name="FechaFinal" length="10" not-null="true" />
+        </property>
+        <property name="estado" type="char">
+            <column name="Estado" length="1" not-null="true" />
+        </property>
+        <property name="usuarioInscripcion" type="string">
+            <column name="UsuarioInscripcion" length="20" />
+        </property>
+        <property name="fechaInscripcion" type="timestamp">
+            <column name="FechaInscripcion" length="19" />
+        </property>
+        <set name="matriculas" table="matricula" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdAnhoEscolar" length="4" not-null="true" />
+            </key>
+            <one-to-many class="dev.com.matricula.model.Matricula" />
+        </set>
+        <set name="asignacions" table="asignacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdAnhoEscolar" length="4" not-null="true" />
+            </key>
+            <one-to-many class="dev.com.matricula.model.Asignacion" />
+        </set>
+    </class>
+</hibernate-mapping>

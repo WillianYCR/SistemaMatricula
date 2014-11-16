@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="alumnoServiceImpl" class="dev.com.matricula.serviceimpl.AlumnoServiceImpl">
+		<property name="alumnoDao" ref="alumnoDaoImpl" />
+	</bean>
+	
+	<bean id="consultaAlumnoServiceImpl" class="dev.com.matricula.serviceimpl.ConsultaAlumnoServiceImpl">
+		<property name="matriculaDao" ref="matriculaDaoImpl" />
+	</bean>
+	
+	<bean id="consultaAlumnosAulaServiceImpl" class="dev.com.matricula.serviceimpl.ConsultaAlumnosAulaServiceImpl">
+		<property name="alumnoDao" ref="alumnoDaoImpl" />
+	</bean>
+	
+	<bean id="consultaCursoServiceImpl" class="dev.com.matricula.serviceimpl.ConsultaCursosServiceImpl">
+		<property name="asignacionDao" ref="asignacionDaoImpl" />
+	</bean>
+	
+	<bean id="consultaDatoAlumnoServiceImpl"
+		class="dev.com.matricula.serviceimpl.ConsultaDatoAlumnoServiceImpl">
+		<property name="alumnoDao" ref="alumnoDaoImpl" />
+	</bean>
+	
+	<bean id="consultaNotaServiceImpl" class="dev.com.matricula.serviceimpl.ConsultaNotaServiceImpl">
+		<property name="notasDao" ref="notasDaoImpl" />
+	</bean>
+	
+	<bean id="loginServiceImpl" class="dev.com.matricula.serviceimpl.LoginServiceImpl">
+		<property name="usuarioDao" ref="usuarioDaoImpl" />
+		<property name="rolUsuarioDao" ref="rolUsuarioDaoImpl" />
+		<property name="usuarioAlumnoDao" ref="usuarioAlumnoDaoImpl" />
+	</bean>
+	
+	<bean id="matriculaMantenimientoAlumnoServiceImpl"
+		class="dev.com.matricula.serviceimpl.MatriculaMantenimientoAlumnoServiceImpl">
+		<property name="alumnoDao" ref="alumnoDaoImpl" />
+		<property name="usuarioDao" ref="usuarioDaoImpl" />
+		<property name="rolUsuarioDao" ref="rolUsuarioDaoImpl" />
+		<property name="usuarioAlumnoDao" ref="usuarioAlumnoDaoImpl" />
+	</bean>
+	
+	<bean id="matriculaMantenimientoApoderadoServiceImpl"
+		class="dev.com.matricula.serviceimpl.MatriculaMantenimientoApoderadoServiceImpl">
+		<property name="apoderadoDao" ref="apoderadoDaoImpl" />
+		<property name="usuarioDao" ref="usuarioDaoImpl" />
+		<property name="rolUsuarioDao" ref="rolUsuarioDaoImpl" />
+		<property name="usuarioAlumnoDao" ref="usuarioAlumnoDaoImpl" />
+	</bean>
+	
+	<bean id="usuarioServiceImpl" class="dev.com.matricula.serviceimpl.UsuarioServiceImpl">
+		<property name="usuarioDao" ref="usuarioDaoImpl" />
+		<property name="rolUsuarioDao" ref="rolUsuarioDaoImpl" />
+		<property name="usuarioAlumnoDao" ref="usuarioAlumnoDaoImpl" />
+	</bean>
+	
+</beans>

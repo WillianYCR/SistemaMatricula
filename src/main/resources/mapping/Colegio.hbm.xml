@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/04/2014 12:29:48 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="dev.com.matricula.model.Colegio" table="colegio" catalog="bdmatricula">
+        <id name="idColegio" type="java.lang.Integer">
+            <column name="IdColegio" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="50" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="Direccion" length="25" not-null="true" />
+        </property>
+        <property name="tipo" type="char">
+            <column name="Tipo" length="1" not-null="true" />
+        </property>
+        <set name="matriculas" table="matricula" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdColegio" not-null="true" />
+            </key>
+            <one-to-many class="dev.com.matricula.model.Matricula" />
+        </set>
+    </class>
+</hibernate-mapping>

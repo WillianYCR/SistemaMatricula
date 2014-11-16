@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="utf-8" />
+   <title>WIYOCARA.COM</title>
+   <link rel="stylesheet" href="../css/Principal.css"></link>
+   
+   <script>
+   	function mostrarAlerta() {
+   		alert('Hizo Click');
+   	}
+   	function hacerClick() {
+   		document.getElementsByTagName('input')[0].onclick = mostrarAlerta();
+   	}
+   	//window.onload = hacerClick;
+   </script>
+</head>
+
+<!-- *************************************************************************** -->
+
+<body>
+   <div class="agruparCuerpoCentrar">
+
+      <!-- INICIO DE CABECERA -->
+      <div class="liniaModeloTituloSup"></div>
+      
+      <header class="cabeceraCentralTitulo">
+         <h1> C.E. NOVATOS UGE-01 - SISTEMA CENTRAL</h1>
+      </header>
+
+      <div class="liniaModeloTituloInf"></div>
+      <!-- INICIO DE CABECERA -->
+
+
+      <div class="banerCentralizado">
+            <input type="button" width=500px; value="aceptar" />
+            <figure>
+               <img src="../imagen/jpg/supervisa.jpg" alt="hte Pulpit"
+                  height="300">
+               <figcaption>Descripcion de la imagen</figcaption>
+            </figure>
+      </div>
+   </div>
+</body>
+</html>

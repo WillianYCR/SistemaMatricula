@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/04/2014 12:29:48 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="dev.com.matricula.model.Alumno" table="alumno" catalog="bdmatricula">
+        <id name="idAlumno" type="java.lang.Integer">
+            <column name="IdAlumno" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="50" not-null="true" />
+        </property>
+        <property name="apellidoPaterno" type="string">
+            <column name="ApellidoPaterno" length="50" not-null="true" />
+        </property>
+        <property name="apellidoMaterno" type="string">
+            <column name="ApellidoMaterno" length="50" not-null="true" />
+        </property>
+        <property name="fechaNacimiento" type="date">
+            <column name="FechaNacimiento" length="10" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="Telefono" length="12" />
+        </property>
+        <property name="dni" type="string">
+            <column name="Dni" length="8" not-null="true" />
+        </property>
+        <property name="sexo" type="char">
+            <column name="Sexo" length="1" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="50" />
+        </property>
+        <property name="usuarioInscripcion" type="string">
+            <column name="UsuarioInscripcion" length="20" />
+        </property>
+        <property name="fechaInscripcion" type="timestamp">
+            <column name="FechaInscripcion" length="19" />
+        </property>
+        <set name="usuarioalumnos" table="usuarioalumno" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdAlumno" not-null="true" />
+            </key>
+            <one-to-many class="dev.com.matricula.model.UsuarioAlumno" />
+        </set>
+        <set name="parentescos" table="parentesco" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdAlumno" not-null="true" />
+            </key>
+            <one-to-many class="dev.com.matricula.model.Parentesco" />
+        </set>
+        <set name="matriculas" table="matricula" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdAlumno" not-null="true" />
+            </key>
+            <one-to-many class="dev.com.matricula.model.Matricula" />
+        </set>
+        <set name="notases" table="notas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdAlumno" not-null="true" />
+            </key>
+            <one-to-many class="dev.com.matricula.model.Notas" />
+        </set>
+    </class>
+</hibernate-mapping>
