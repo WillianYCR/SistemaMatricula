@@ -2,17 +2,22 @@ package dev.com.matricula.bean;
 
 import java.io.Serializable;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import dev.com.matricula.model.Rol;
 import dev.com.matricula.model.RolUsuario;
 import dev.com.matricula.model.Usuario;
 import dev.com.matricula.service.UsuarioService;
 
+@Component
 public class UsuarioBean implements Serializable {
 
   private static final long serialVersionUID = 1L;
   private Usuario usuario;
   private RolUsuario rolUsuario;
   private Rol rol;
+  @Autowired
   private UsuarioService usuarioService;
   private String confirma = "";
   private boolean rsptUsuario;
@@ -98,7 +103,4 @@ public class UsuarioBean implements Serializable {
     this.rsptAccesoRol = rsptAccesoRol;
   }
 
-  public void setUsuarioService(UsuarioService usuarioService) {
-    this.usuarioService = usuarioService;
-  }
 }

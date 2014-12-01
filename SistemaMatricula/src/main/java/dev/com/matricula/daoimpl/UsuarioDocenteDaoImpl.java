@@ -3,16 +3,19 @@ package dev.com.matricula.daoimpl;
 import java.util.List;
 
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import dev.com.matricula.dao.UsuarioDocenteDao;
 import dev.com.matricula.model.UsuarioDocente;
 
+@Repository
 public class UsuarioDocenteDaoImpl extends AbstractHibernateDao implements UsuarioDocenteDao {
 
   private int entero;
   private String CODIGO_USUARIO = "idUsuario";
   private List<UsuarioDocente> usuarioDocenteList;
 
+  @Override
   public boolean registrarUsuarioDocente(UsuarioDocente usuarioDocente) {
     try {
       iniciarTransaccion();
@@ -25,6 +28,7 @@ public class UsuarioDocenteDaoImpl extends AbstractHibernateDao implements Usuar
     }
   }
 
+  @Override
   public Integer obtenerUltimoIdUsuarioDocente() {
     abrirSesion();
     query = session.createSQLQuery("select max(idusuariodocente+1) from UsuarioDocente");
@@ -33,6 +37,7 @@ public class UsuarioDocenteDaoImpl extends AbstractHibernateDao implements Usuar
     return entero;
   }
 
+  @Override
   @SuppressWarnings("unchecked")
   public List<UsuarioDocente> obtenerUsuarioDocentes() {
     abrirSesion();
@@ -42,6 +47,7 @@ public class UsuarioDocenteDaoImpl extends AbstractHibernateDao implements Usuar
     return usuarioDocenteList;
   }
 
+  @Override
   @SuppressWarnings("unchecked")
   public List<UsuarioDocente> obtenerIdDocente(int codigoUsuario) {
     session = getSessionFactory().openSession();

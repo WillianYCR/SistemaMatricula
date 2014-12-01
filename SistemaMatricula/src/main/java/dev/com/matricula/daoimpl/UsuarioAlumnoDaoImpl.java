@@ -3,10 +3,12 @@ package dev.com.matricula.daoimpl;
 import java.util.List;
 
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import dev.com.matricula.dao.UsuarioAlumnoDao;
 import dev.com.matricula.model.UsuarioAlumno;
 
+@Repository
 public class UsuarioAlumnoDaoImpl extends AbstractHibernateDao implements UsuarioAlumnoDao {
 
   private int entero;
@@ -14,6 +16,7 @@ public class UsuarioAlumnoDaoImpl extends AbstractHibernateDao implements Usuari
   private String CODIGO_ALUMNO = "alumno.idAlumno";
   private List<UsuarioAlumno> usuarioAlumnolist;
 
+  @Override
   public boolean registrarUsuarioAlumno(UsuarioAlumno usuarioAlumno) {
     try {
       iniciarTransaccion();
@@ -26,6 +29,7 @@ public class UsuarioAlumnoDaoImpl extends AbstractHibernateDao implements Usuari
     }
   }
 
+  @Override
   public Integer obtenerUltimoIdUsuarioAlumno() {
     abrirSesion();
     query = session.createSQLQuery("select max(idusuarioalumno+1) from UsuarioAlumno");
@@ -34,6 +38,7 @@ public class UsuarioAlumnoDaoImpl extends AbstractHibernateDao implements Usuari
     return entero;
   }
 
+  @Override
   @SuppressWarnings("unchecked")
   public List<UsuarioAlumno> obtenerUsuarioAlumnos() {
     iniciarTransaccion();
@@ -43,6 +48,7 @@ public class UsuarioAlumnoDaoImpl extends AbstractHibernateDao implements Usuari
     return usuarioAlumnolist;
   }
 
+  @Override
   @SuppressWarnings("unchecked")
   public List<UsuarioAlumno> obtenerIdAlumno(int codigoUsuario) {
     iniciarTransaccion();
@@ -53,6 +59,7 @@ public class UsuarioAlumnoDaoImpl extends AbstractHibernateDao implements Usuari
     return usuarioAlumnolist;
   }
 
+  @Override
   public Integer obtenerIdUsuarioPorIdAlumno(int idAlumno) {
     iniciarTransaccion();
     criteria = session.createCriteria(UsuarioAlumno.class);
@@ -62,6 +69,7 @@ public class UsuarioAlumnoDaoImpl extends AbstractHibernateDao implements Usuari
     return idUsuario;
   }
 
+  @Override
   public List<UsuarioAlumno> obtenerListaAlumnosRelacionados(int codigoUsuario) {
     iniciarTransaccion();
     criteria = session.createCriteria(UsuarioAlumno.class);

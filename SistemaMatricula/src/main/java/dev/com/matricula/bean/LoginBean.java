@@ -3,6 +3,9 @@ package dev.com.matricula.bean;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import dev.com.matricula.bean.SistemaSession.KeyAlumno;
 import dev.com.matricula.bean.SistemaSession.KeyApoderado;
 import dev.com.matricula.dto.RolUsuarioDTO;
@@ -12,6 +15,7 @@ import dev.com.matricula.model.UsuarioAlumno;
 import dev.com.matricula.service.LoginService;
 import dev.com.matricula.util.enums.RolEnum;
 
+@Component
 public class LoginBean implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -20,6 +24,7 @@ public class LoginBean implements Serializable {
 
   private UsuarioDTO usuario;
   private RolUsuarioDTO rolUsuario;
+  @Autowired
   private LoginService loginService;
   private List<UsuarioAlumno> usuarioAlumnosList;
 
@@ -105,10 +110,6 @@ public class LoginBean implements Serializable {
 
     return "LOGIN";
 
-  }
-
-  public void setLoginService(LoginService loginService) {
-    this.loginService = loginService;
   }
 
   public UsuarioDTO getUsuario() {

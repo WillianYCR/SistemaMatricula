@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import dev.com.matricula.model.Alumno;
 import dev.com.matricula.model.Rol;
 import dev.com.matricula.model.RolUsuario;
@@ -11,6 +14,7 @@ import dev.com.matricula.model.Usuario;
 import dev.com.matricula.model.UsuarioAlumno;
 import dev.com.matricula.service.MatriculaMantenimientoAlumnoService;
 
+@Component
 public class MatriculaMantenimientoAlumnoBean implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -20,6 +24,7 @@ public class MatriculaMantenimientoAlumnoBean implements Serializable {
   private UsuarioAlumno usuarioAlumno;
   private Rol rol;
   private RolUsuario rolUsuario;
+  @Autowired
   private MatriculaMantenimientoAlumnoService matriculaMantenimientoAlumnoService;
 
   public MatriculaMantenimientoAlumnoBean() {
@@ -119,8 +124,4 @@ public class MatriculaMantenimientoAlumnoBean implements Serializable {
     this.usuarioAlumno = usuarioAlumno;
   }
 
-  public void setMatriculaMantenimientoAlumnoService(
-          MatriculaMantenimientoAlumnoService matriculaMantenimientoAlumnoService) {
-    this.matriculaMantenimientoAlumnoService = matriculaMantenimientoAlumnoService;
-  }
 }

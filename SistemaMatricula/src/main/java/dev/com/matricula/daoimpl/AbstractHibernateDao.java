@@ -4,9 +4,11 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class AbstractHibernateDao {
 
+  @Autowired
   private SessionFactory sessionFactory;
   protected Session session;
   protected Criteria criteria;
@@ -40,10 +42,6 @@ public abstract class AbstractHibernateDao {
 
   public SessionFactory getSessionFactory() {
     return sessionFactory;
-  }
-
-  public void setSessionFactory(SessionFactory sessionFactory) {
-    this.sessionFactory = sessionFactory;
   }
 
 }

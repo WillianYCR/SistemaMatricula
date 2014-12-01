@@ -3,10 +3,12 @@ package dev.com.matricula.daoimpl;
 import java.util.List;
 
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import dev.com.matricula.dao.UsuarioDao;
 import dev.com.matricula.model.Usuario;
 
+@Repository
 public class UsuarioDaoImpl extends AbstractHibernateDao implements UsuarioDao {
 
   private int entero;
@@ -16,6 +18,7 @@ public class UsuarioDaoImpl extends AbstractHibernateDao implements UsuarioDao {
   private Usuario usuario;
   private List<Usuario> usuarioList;
 
+  @Override
   public boolean registrarUsuario(Usuario usuario) {
     try {
       iniciarTransaccion();
@@ -28,6 +31,7 @@ public class UsuarioDaoImpl extends AbstractHibernateDao implements UsuarioDao {
     }
   }
 
+  @Override
   public Integer obtenerUltimoIdUsuario() {
     abrirSesion();
     query = session.createSQLQuery("select max(idusuario+1) from Usuario");
@@ -36,6 +40,7 @@ public class UsuarioDaoImpl extends AbstractHibernateDao implements UsuarioDao {
     return entero;
   }
 
+  @Override
   public Usuario obtenerDatoUsuarioAcceso(String loginUsuario) {
     iniciarTransaccion();
     criteria = session.createCriteria(Usuario.class);
@@ -45,6 +50,7 @@ public class UsuarioDaoImpl extends AbstractHibernateDao implements UsuarioDao {
     return usuario;
   }
 
+  @Override
   @SuppressWarnings("unchecked")
   public List<Usuario> obtenerUsuario() {
     iniciarTransaccion();
@@ -54,6 +60,7 @@ public class UsuarioDaoImpl extends AbstractHibernateDao implements UsuarioDao {
     return usuarioList;
   }
 
+  @Override
   public String obtenerLoginUsuario(int idUsuario) {
     iniciarTransaccion();
     criteria = session.createCriteria(Usuario.class);

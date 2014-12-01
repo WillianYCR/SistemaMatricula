@@ -3,10 +3,12 @@ package dev.com.matricula.daoimpl;
 import java.util.List;
 
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import dev.com.matricula.dao.ApoderadoDao;
 import dev.com.matricula.model.Apoderado;
 
+@Repository
 public class ApoderadoDaoImpl extends AbstractHibernateDao implements ApoderadoDao {
 
   private int entero;
@@ -14,6 +16,7 @@ public class ApoderadoDaoImpl extends AbstractHibernateDao implements ApoderadoD
   private Apoderado apoderado;
   private List<Apoderado> apoderadoList;
 
+  @Override
   public boolean registrarApoderado(Apoderado apoderado) {
     try {
       iniciarTransaccion();
@@ -25,6 +28,7 @@ public class ApoderadoDaoImpl extends AbstractHibernateDao implements ApoderadoD
     }
   }
 
+  @Override
   public Integer obtenerUltimoIdApoderado() {
     iniciarTransaccion();
     query = session.createSQLQuery("select max(idapoderado+1) from Apoderado");
@@ -33,6 +37,7 @@ public class ApoderadoDaoImpl extends AbstractHibernateDao implements ApoderadoD
     return entero;
   }
 
+  @Override
   public Apoderado obtenerDatoApoderado(int codigoApoderado) {
     iniciarTransaccion();
     criteria = session.createCriteria(Apoderado.class);
@@ -42,6 +47,7 @@ public class ApoderadoDaoImpl extends AbstractHibernateDao implements ApoderadoD
     return apoderado;
   }
 
+  @Override
   @SuppressWarnings("unchecked")
   public List<Apoderado> obtenerApoderados() {
     abrirSesion();

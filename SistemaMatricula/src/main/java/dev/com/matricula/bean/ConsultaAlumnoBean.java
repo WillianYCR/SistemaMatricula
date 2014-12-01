@@ -3,11 +3,15 @@ package dev.com.matricula.bean;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import dev.com.matricula.model.Alumno;
 import dev.com.matricula.model.Curso;
 import dev.com.matricula.model.Matricula;
 import dev.com.matricula.service.ConsultaAlumnoService;
 
+@Component
 public class ConsultaAlumnoBean implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -15,6 +19,7 @@ public class ConsultaAlumnoBean implements Serializable {
   private Curso curso;
   private Matricula matricula;
   private ArrayList<Matricula> matriculaList;
+  @Autowired
   private ConsultaAlumnoService consultaAlumnoService;
 
   public ConsultaAlumnoBean() {
@@ -63,7 +68,4 @@ public class ConsultaAlumnoBean implements Serializable {
     this.matriculaList = matriculaList;
   }
 
-  public void setConsultaAlumnoService(ConsultaAlumnoService consultaAlumnoService) {
-    this.consultaAlumnoService = consultaAlumnoService;
-  }
 }

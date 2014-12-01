@@ -3,10 +3,12 @@ package dev.com.matricula.bean;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import dev.com.matricula.dto.AlumnoDTO;
-import dev.com.matricula.model.Alumno;
 import dev.com.matricula.service.ConsultaAlumnosAulaService;
 
+@Component
 public class ConsultaAlumnosAulaBean implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -20,14 +22,6 @@ public class ConsultaAlumnosAulaBean implements Serializable {
   public String listarAlumnosAula() {
     alumnosList = consultaAlumnosAulaService.listarAlumnosAula();
     return "/pages/consultaAlumnosAula.xhtml";
-  }
-
-  // Getter and setter
-
-
-
-  public void setConsultaAlumnosAulaService(ConsultaAlumnosAulaService consultaAlumnosAulaService) {
-    this.consultaAlumnosAulaService = consultaAlumnosAulaService;
   }
 
   public List<AlumnoDTO> getAlumnosList() {

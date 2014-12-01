@@ -3,10 +3,12 @@ package dev.com.matricula.daoimpl;
 import java.util.List;
 
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import dev.com.matricula.dao.RolUsuarioDao;
 import dev.com.matricula.model.RolUsuario;
 
+@Repository
 public class RolUsuarioDaoImpl extends AbstractHibernateDao implements RolUsuarioDao {
 
   private int entero;
@@ -14,6 +16,7 @@ public class RolUsuarioDaoImpl extends AbstractHibernateDao implements RolUsuari
   private RolUsuario rolUsuario;
   private List<RolUsuario> rolUsuarioList;
 
+  @Override
   public boolean registrarRolUsuario(RolUsuario rolUsuario) {
     try {
       iniciarTransaccion();
@@ -25,6 +28,7 @@ public class RolUsuarioDaoImpl extends AbstractHibernateDao implements RolUsuari
     }
   }
 
+  @Override
   public Integer obtenerUltimoIdRolUsuario() {
     abrirSesion();
     query = session.createSQLQuery("select max(idrolusuario+1) from RolUsuario");
@@ -33,6 +37,7 @@ public class RolUsuarioDaoImpl extends AbstractHibernateDao implements RolUsuari
     return entero;
   }
 
+  @Override
   public RolUsuario obtenerDatoRolUsuario(Integer codigoUsuario) {
     iniciarTransaccion();
     criteria = session.createCriteria(RolUsuario.class);
@@ -42,6 +47,7 @@ public class RolUsuarioDaoImpl extends AbstractHibernateDao implements RolUsuari
     return rolUsuario;
   }
 
+  @Override
   @SuppressWarnings("unchecked")
   public List<RolUsuario> obtenerRolusuarios() {
     abrirSesion();

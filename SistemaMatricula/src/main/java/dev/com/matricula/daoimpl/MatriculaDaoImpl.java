@@ -3,16 +3,19 @@ package dev.com.matricula.daoimpl;
 import java.util.List;
 
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import dev.com.matricula.dao.MatriculaDao;
 import dev.com.matricula.model.Matricula;
 
+@Repository
 public class MatriculaDaoImpl extends AbstractHibernateDao implements MatriculaDao {
 
   private int entero;
   private String CODIGO_ANHOESCOLAR = "anhoEscolar.idAnhoEscolar";
   private List<Matricula> matriculaList;
 
+  @Override
   public boolean registrarMatricula(Matricula matricula) {
     try {
       iniciarTransaccion();
@@ -24,6 +27,7 @@ public class MatriculaDaoImpl extends AbstractHibernateDao implements MatriculaD
     }
   }
 
+  @Override
   public Integer obtenerUltimoIdMatricula() {
     abrirSesion();
     query = session.createSQLQuery("select max(idmatricula+1) from MatriculaDTO");
@@ -32,6 +36,7 @@ public class MatriculaDaoImpl extends AbstractHibernateDao implements MatriculaD
     return entero;
   }
 
+  @Override
   @SuppressWarnings("unchecked")
   public List<Matricula> obtenerMatriculas() {
     abrirSesion();
@@ -41,6 +46,7 @@ public class MatriculaDaoImpl extends AbstractHibernateDao implements MatriculaD
     return matriculaList;
   }
 
+  @Override
   @SuppressWarnings("unchecked")
   public List<Matricula> obtenerMatriculaAlumno(int codigoAnhoEscolar) {
     abrirSesion();
