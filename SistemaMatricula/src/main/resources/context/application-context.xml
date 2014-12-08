@@ -12,6 +12,6 @@
   </bean>
 
   <context:component-scan
-    base-package="dev.com.matricula.bean, dev.com.matricula.serviceimpl, dev.com.matricula.daoimpl, dev.com.matricula.test, dev.com.matricula.controller " />
+    base-package="dev.com.matricula.bean, dev.com.matricula.serviceimpl, dev.com.matricula.daoimpl, dev.com.matricula.test, dev.com.matricula.controller" />
 
 </beans>

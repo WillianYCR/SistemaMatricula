@@ -22,7 +22,7 @@
   <servlet>
     <description></description>
     <servlet-name>AulaRegistrar</servlet-name>
-    <servlet-class>dev.com.matriculado.controller.AulaRegistrar
+    <servlet-class>dev.com.matricula.controller.AulaRegistrar
 		</servlet-class>
   </servlet>
   <servlet-mapping>
@@ -32,7 +32,7 @@
   <servlet>
     <description></description>
     <servlet-name>AulaListar</servlet-name>
-    <servlet-class>dev.com.matriculado.controller.AulaListar</servlet-class>
+    <servlet-class>dev.com.matricula.controller.AulaListar</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AulaListar</servlet-name>

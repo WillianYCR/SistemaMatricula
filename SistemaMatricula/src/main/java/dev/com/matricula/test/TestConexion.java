@@ -26,8 +26,6 @@ public class TestConexion {
 		ArrayList lista = new ArrayList();
 		lista = (ArrayList) aulaService.listarAula();
 		System.out.println("cantidad de aulas : " + lista.size());
-		System.out.println("aulas : " + lista.size());
-		System.out.println("cantidad de aulas : " + lista.size());
 		Assert.assertNotNull(lista);
 	}
 }
