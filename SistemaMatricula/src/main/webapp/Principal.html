@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8" />
+<title>WIYOCARA.COM</title>
+<link rel="stylesheet" href="css/Principal.css"></link>
+
+<script>
+    function mostrarAlerta() {
+	alert('Hizo Click');
+    }
+    function hacerClick() {
+	document.getElementsByTagName('input')[0].onclick = mostrarAlerta();
+    }
+    //window.onload = hacerClick;
+</script>
+</head>
+
+<!-- *************************************************************************** -->
+
+<body>
+   <div class="agruparCuerpoCentrar">
+
+      <!-- INICIO DE CABECERA -->
+      <div class="liniaModeloTituloSup"></div>
+
+      <header class="cabeceraCentralTitulo">
+         <h1>C.E. NOVATOS UGE-01 - SISTEMA CENTRAL</h1>
+      </header>
+
+      <nav class="menuPrincipal">
+         <ul>
+            <li onclick="alert('Prueba de java script')">INICIO</li>
+            <li>ORGANIZACION</li>
+            <li>MISION</li>
+            <li>VISION</li>
+            <li onclick="window.open('page/index.html')">Mantenimiento</li>
+            <li  onclick="window.open('page/MatriculaEstructura.html')">MATRICULA</li>
+            <li>INVESTIGACION</li>
+            <li>BIBLIOTECA</li>
+            <li onclick="window.open('AulaListar.jsp')">AULA</li>
+         </ul>
+      </nav>
+      <div class="liniaModeloTituloInf"></div>
+      
+      <!-- INICIO DE SECCIONES -->
+      <div>
+         <!-- INICIO DE SECCION IZQUIERDA -->
+         <div class="banerContenidoIzq">
+            <iframe id="external" class="iframeDeBaner"
+               src="baner.html"></iframe>
+         </div>
+
+         <!-- INICIO DE SECCION DERECHA -->
+         <div class="banerContenidoDer">
+            <video id="wiyocara" width="360" height="270" controls>
+               <source src="video/Musica.mp4"
+                  type="video/mp4; codecs='avc1,mp4a'" />
+               <source src="video/Musica.webm"
+                  type="video/webm; codecs='vp8,vorbis'" />
+            </video>
+            <div class="semiTitulo"></div>
+         </div>
+
+      </div>
+
+      <div class="banerCentralizado">
+         <a target="_blank" href="../page/Logueo.html">Abrir Linea de Codigo
+            en una nueva ventana</a>
+
+         <section class="seccionDeContenidoIzq">
+            <article>principal</article>
+            <article>chat</article>
+            <input type="button" width=500px; value="Abrir Logueo"
+               onclick="window.open('../page/Logueo.html')" />
+            <figure>
+               <img src="imagen/jpg/supervisa.jpg" alt="hte Pulpit"
+                  height="300">
+               <figcaption>Descripcion de la imagen</figcaption>
+            </figure>
+         </section>
+         <aside class="coulmnaDeNotas">botones sociales</aside>
+      </div>
+
+      <footer class="piePagina"> developercenter@starting.com </footer>
+   </div>
+</body>
+</html>

@@ -1,30 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	version="2.5">
-  	<display-name>SistemaMatricula</display-name>
-	
-	<session-config>
-		<session-timeout>-1</session-timeout>
-	</session-config>
-	
-	<welcome-file-list>
-		<welcome-file>Index.html</welcome-file>
-	</welcome-file-list>
-    
-    <!-- Parametros de contexto -->
-	<context-param>
-		<param-name>javax.faces.PROJECT_STAGE</param-name>
-		<param-value>Development</param-value>
-	</context-param>
-	<context-param>
-		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
-		<param-value>resources.application</param-value>
-	</context-param>
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:context/application-context.xml</param-value>
-	</context-param>
-	
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>SistemaMatricula</display-name>
+  <session-config>
+    <session-timeout>-1</session-timeout>
+  </session-config>
+  <welcome-file-list>
+    <welcome-file>Index.html</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>javax.faces.PROJECT_STAGE</param-name>
+    <param-value>Development</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>resources.application</param-value>
+  </context-param>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:context/application-context.xml</param-value>
+  </context-param>
+  <servlet>
+    <description></description>
+    <servlet-name>AulaRegistrar</servlet-name>
+    <servlet-class>dev.com.matriculado.controller.AulaRegistrar
+		</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AulaRegistrar</servlet-name>
+    <url-pattern>/aulaRegistrar.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>AulaListar</servlet-name>
+    <servlet-class>dev.com.matriculado.controller.AulaListar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AulaListar</servlet-name>
+    <url-pattern>/aulaListar.do</url-pattern>
+  </servlet-mapping>
 </web-app>

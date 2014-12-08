@@ -1,5 +1,7 @@
 package dev.com.matricula.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +19,10 @@ public class AulaServiceImpl implements AulaService {
   public boolean registrarAula(Aula aula) {
     return aulaDao.persistirAula(aula);
   }
+
+@Override
+public List<Aula> listarAula() {
+	return aulaDao.listarAula();
+}
 
 }
