@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans 
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd ">
 
   <bean id="sessionFactory"
     class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
@@ -12,6 +12,6 @@
   </bean>
 
   <context:component-scan
-    base-package="dev.com.matricula.bean, dev.com.matricula.serviceimpl, dev.com.matricula.daoimpl, dev.com.matricula.test, dev.com.matricula.controller" />
+    base-package="dev.com.matricula.bean, dev.com.matricula.serviceimpl, dev.com.matricula.daoimpl, dev.com.matricula.test " />
 
 </beans>
