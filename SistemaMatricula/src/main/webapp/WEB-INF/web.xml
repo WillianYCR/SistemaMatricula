@@ -19,6 +19,9 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:context/application-context.xml</param-value>
   </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener> 
   <servlet>
     <description></description>
     <servlet-name>AulaRegistrar</servlet-name>
