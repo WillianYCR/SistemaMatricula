@@ -14,22 +14,32 @@ import dev.com.matricula.model.Aula;
 public class AulaDaoImpl extends AbstractHibernateDao implements AulaDao {
 
 	private List<Aula> aulaList;
+
 	@Override
 	public boolean persistirAula(Aula aula) {
 		try {
-			JOptionPane.showMessageDialog(null, "Inicio1");
 			iniciarTransaccion();
-			JOptionPane.showMessageDialog(null, "Inicio2");
 			session.saveOrUpdate(aula);
-			JOptionPane.showMessageDialog(null, "Inicio3");
 			commitearCerrarTransaccion();
-			JOptionPane.showMessageDialog(null, "Inicio4");
 			return true;
 		} catch (HibernateException e) {
 			JOptionPane.showMessageDialog(null, "Exception: " + e.getMessage());
 			return false;
-		}finally{
-			JOptionPane.showMessageDialog(null, "Siempre se ejecuta");
+		} finally {
+		}
+	}
+	
+	@Override
+	public boolean eliminarAula(Aula aula) {
+		try {
+			iniciarTransaccion();
+			session.delete(aula);
+			commitearCerrarTransaccion();
+			return true;
+		} catch (HibernateException e) {
+			JOptionPane.showMessageDialog(null, "Exception: " + e.getMessage());
+			return false;
+		} finally {
 		}
 	}
 

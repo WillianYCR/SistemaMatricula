@@ -6,6 +6,8 @@ import java.util.List;
 public interface AulaDao {
 
   boolean persistirAula(Aula alumno);
+  
+  boolean eliminarAula(Aula alumno);
 
   public List<Aula> listarAula();
 }

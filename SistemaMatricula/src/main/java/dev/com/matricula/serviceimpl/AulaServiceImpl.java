@@ -12,17 +12,27 @@ import dev.com.matricula.service.AulaService;
 @Service
 public class AulaServiceImpl implements AulaService {
 
-  @Autowired
-  private AulaDao aulaDao;
+	@Autowired
+	private AulaDao aulaDao;
 
-  @Override
-  public boolean registrarAula(Aula aula) {
-    return aulaDao.persistirAula(aula);
-  }
+	@Override
+	public boolean registrarAula(Aula aula) {
+		return aulaDao.persistirAula(aula);
+	}
 
-@Override
-public List<Aula> listarAula() {
-	return aulaDao.listarAula();
-}
+	@Override
+	public boolean actualizarAula(Aula aula) {
+		return aulaDao.persistirAula(aula);
+	}
+	
+	@Override
+	public boolean eliminarAula(Aula aula) {
+		return aulaDao.eliminarAula(aula);
+	}
+
+	@Override
+	public List<Aula> listarAula() {
+		return aulaDao.listarAula();
+	}
 
 }

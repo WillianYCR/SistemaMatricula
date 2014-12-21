@@ -24,21 +24,30 @@
   </listener> 
   <servlet>
     <description></description>
-    <servlet-name>AulaRegistrar</servlet-name>
-    <servlet-class>dev.com.matricula.controller.AulaRegistrar
+    <servlet-name>AulaRegistrarController</servlet-name>
+    <servlet-class>dev.com.matricula.controller.AulaRegistrarController
 		</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AulaRegistrar</servlet-name>
-    <url-pattern>/aulaRegistrar.do</url-pattern>
+    <servlet-name>AulaRegistrarController</servlet-name>
+    <url-pattern>/aulaRegistrarController.do</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <servlet-name>AulaListar</servlet-name>
-    <servlet-class>dev.com.matricula.controller.AulaListar</servlet-class>
+    <servlet-name>AulaListarController</servlet-name>
+    <servlet-class>dev.com.matricula.controller.AulaListarController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AulaListar</servlet-name>
-    <url-pattern>/aulaListar.do</url-pattern>
+    <servlet-name>AulaListarController</servlet-name>
+    <url-pattern>/aulaListarController.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>AulaActualizarController</servlet-name>
+    <servlet-class>dev.com.matricula.controller.AulaActualizarController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AulaActualizarController</servlet-name>
+    <url-pattern>/aulaActualizarController.do</url-pattern>
   </servlet-mapping>
 </web-app>

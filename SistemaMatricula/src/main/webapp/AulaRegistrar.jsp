@@ -4,48 +4,44 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MANTENIMIENTO DE AULAS</title>
+<title>AULAS</title>
 <link rel="stylesheet" href="css/EstiloMantenimiento.css">
 </head>
 <body>
-   <div id="container" align="center">
-      <header>
-         <h1 style="color: white;">SISTEMA DE PRINCIPAL</h1>
-      </header>
+	<div id="container" align="center">
+		<header> SISTEMA DE MANTENIMIENTO </header>
 
-      <nav>
-         <h2 style="color: white;">Sistema de atención al Empleado</h2>
-      </nav>
+		<nav>REGISTRAR NUEVA AULA</nav>
 
-      <section>
-         <form method="post" name="aulaRegistrar" action="aulaRegistrar.do">
-            <table bgcolor="#01A9DB" border="1" cellspacing="0"
-               cellpadding="5">
-               <caption>REGISTRO DE EMPLEADOS</caption>
-               <tr>
-                  <td>AULA:</td>
-                  <td><input type="text" name="txtIdAula"></td>
-               </tr>
-               <tr>
-                  <td>DESCRIPCION:</td>
-                  <td><input type="text" name="txtTipo"></td>
-               </tr>
-               <tr>
-                  <td>CAPACIDAD:</td>
-                  <td><input type="text" name="txtCapacidad"></td>
-               </tr>
+		<section>
+			<form method="post" name="frmAulaRegistrar"
+				action="aulaRegistrarController.do" onsubmit="">
+				<table bgcolor="#01A9DB" class="tableforma" width="360"
+					cellspacing="0" cellpadding="5">
+					<tr>
+						<td class="textlabel">Descripción</td>
+						<td class="textlabel">:</td>
+						<td><input type="text" class="textbox" style="width: 200px"
+							name="txtTipo"></td>
+					</tr>
+					<tr>
+						<td class="textlabel">Capacidad de personas</td>
+						<td class="textlabel">:</td>
+						<td><input type="text" class="textbox" style="width: 100px"
+							name="txtCapacidad"></td>
+					</tr>
 
-               <tr align="center">
-                  <td colspan="3"><input type="submit"
-                     value="Grabar" name="grabar" />
-               </tr>
-            </table>
-         </form>
-         <br> <br> <a href="AulaListar.jsp">
-            MOSTRAR LAS AULAR</a>
-      </section>
-      <footer>
-         <div>developercenter@starting.com</div>
-      </footer>
+					<tr align="center">
+						<td colspan="3"><input type="submit" class="button"
+							style="width: 150px" name="btnProceso" value="Grabar" />
+					</tr>
+				</table>
+			</form>
+			<br> <a href="aulaListarController.do" class="alink"> Ver
+				listar de aulas...</a>
+		</section>
+		<footer>
+			<div>developercenter@starting.com</div>
+		</footer>
 </body>
 </html>
