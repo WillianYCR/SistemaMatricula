@@ -6,14 +6,16 @@ import dev.com.matricula.model.Usuario;
 
 public interface UsuarioDao {
 
-  public boolean registrarUsuario(Usuario usuario);
+	public boolean registrarUsuario(Usuario usuario);
 
-  public Integer obtenerUltimoIdUsuario();
+	public Integer obtenerUltimoIdUsuario();
 
-  public Usuario obtenerDatoUsuarioAcceso(String loginUsuario);
+	public Usuario obtenerDatoUsuarioAcceso(String loginUsuario);
 
-  public List<Usuario> obtenerUsuario();
+	public List<Usuario> obtenerUsuario();
 
-  public String obtenerLoginUsuario(int idUsuario);
+	public List<Usuario> listarUsuario();
+
+	public String obtenerLoginUsuario(int idUsuario);
 
 }

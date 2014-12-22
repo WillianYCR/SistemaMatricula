@@ -77,7 +77,7 @@ public class AulaRegistrarController extends HttpServlet {
 
 	private boolean validarCampos() {
 		if (sTipo.equals("")) {
-			JOptionPane.showMessageDialog(null, "Ingrese la descripción");
+			JOptionPane.showMessageDialog(null, "Ingrese la descripcion");
 			return false;
 		}
 		if (sCapacidad.equals("")) {
@@ -88,12 +88,12 @@ public class AulaRegistrarController extends HttpServlet {
 		if (sCapacidad.length() > 2) {
 			JOptionPane
 					.showMessageDialog(null,
-							"El número de capacidad de personas debe tener máximo 2 dígitos");
+							"El numero de capacidad de personas debe tener maximo 2 digitos");
 			return false;
 		}
 		if (sTipo.length() > 30) {
 			JOptionPane.showMessageDialog(null,
-					"la descripción solo permite 30 caracteres como máximo");
+					"la descripcion solo permite 30 caracteres como maximo");
 			return false;
 		}
 		return true;

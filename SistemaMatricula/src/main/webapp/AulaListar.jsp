@@ -17,8 +17,8 @@
 
 		<section>
 			<form method="post" name="frmAulaListar" action="" onsubmit="">
-				<table class="tableforma" border="1" cellpadding="5" width="500"
-					bgcolor="#00BFFF" align="center">
+				<table class="tableforma" border="1" width="500" bgcolor="#00BFFF"
+					align="center" cellspacing="0" cellpadding="5">
 					<tr align="center">
 						<th>AULA</th>
 						<th>DESCRIPCION DE AULA</th>

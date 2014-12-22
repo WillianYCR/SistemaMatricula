@@ -21,7 +21,7 @@
   </context-param>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener> 
+  </listener>
   <servlet>
     <description></description>
     <servlet-name>AulaRegistrarController</servlet-name>
@@ -49,5 +49,23 @@
   <servlet-mapping>
     <servlet-name>AulaActualizarController</servlet-name>
     <url-pattern>/aulaActualizarController.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>UsuarioListarController</servlet-name>
+    <servlet-class>dev.com.matricula.controller.UsuarioListarController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UsuarioListarController</servlet-name>
+    <url-pattern>/usuarioListarController.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>SeccionListarcontroller</servlet-name>
+    <servlet-class>dev.com.matricula.controller.SeccionListarcontroller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SeccionListarcontroller</servlet-name>
+    <url-pattern>/seccionListarcontroller.do</url-pattern>
   </servlet-mapping>
 </web-app>
