@@ -1,4 +1,3 @@
-<%@page import="dev.com.matricula.controller.AulaListarController"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -13,11 +12,18 @@
 	<div id="container" align="center">
 		<header> SISTEMA DE INFORMACION </header>
 
-		<nav>LISTA DE USUARIOS</nav>
+		<nav>
+			<table width="95%" align="center" cellspacing="0" cellpadding="0">
+				<tr align="center">
+					<th align="left">LISTA DE USUARIOS</th>
+					<th align="right">? :(</th>
+				</tr>
+			</table>
+		</nav>
 
 		<section>
 			<form method="post" name="frmUsuarioListar" action="" onsubmit="">
-				<table class="tableforma" border="1" width="750" bgcolor="#00BFFF"
+				<table class="tableforma" border="1" width="800" bgcolor="#00BFFF"
 					align="center" cellspacing="0" cellpadding="5">
 					<tr align="center">
 						<th>CODIGO</th>

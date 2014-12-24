@@ -16,6 +16,7 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import dev.com.matricula.model.Aula;
 import dev.com.matricula.service.AulaService;
 
+//@WebServlet(name = "AulaActualizarController", urlPatterns = { "/aulaActualizarController.do" })
 public class AulaActualizarController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -55,7 +56,7 @@ public class AulaActualizarController extends HttpServlet {
 			if (validarCampos()) {
 				Aula objAula = new Aula();
 				objAula.setIdAula(Integer.parseInt(idaula));
-				objAula.setTipo(sTipo);
+				objAula.setTipo(sTipo.toUpperCase());
 				objAula.setCapacidad(Short.parseShort(sCapacidad));
 
 				String nameBoton = request.getParameter("btnProceso");
@@ -71,7 +72,7 @@ public class AulaActualizarController extends HttpServlet {
 						request.getRequestDispatcher("AulaListar.jsp").forward(
 								request, response);
 					}
-				} else {
+				} else if (nameBoton.equals("Eliminar")){
 					if (aulaService.eliminarAula(objAula)) {
 						JOptionPane.showMessageDialog(null,
 								"Eliminacion exitosa!!!");

@@ -1,4 +1,3 @@
-<%@page import="dev.com.matricula.controller.AulaListarController"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -13,7 +12,14 @@
 	<div id="container" align="center">
 		<header> SISTEMA DE INFORMACION </header>
 
-		<nav>LISTA DE SECCIONES</nav>
+		<nav>
+			<table width="95%" align="center" cellspacing="0" cellpadding="0">
+				<tr align="center">
+					<th align="left">LISTA DE SECCIONES</th>
+					<th align="right">? :( </th>
+				</tr>
+			</table>
+		</nav>
 
 		<section>
 			<form method="post" name="frmSeccionListar" action="" onsubmit="">

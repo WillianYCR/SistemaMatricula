@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import dev.com.matricula.model.Usuario;
 import dev.com.matricula.service.UsuarioService;
 
+//@WebServlet(name = "SeccionListarController", urlPatterns = { "/seccionListarController.do" })
 public class UsuarioListarController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

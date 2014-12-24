@@ -1,9 +1,13 @@
 package dev.com.matricula.service;
 
+import java.util.List;
+
 import dev.com.matricula.model.Alumno;
 
 public interface AlumnoService {
 
-  boolean registrarAlumno(Alumno alumno);
+	public List<Alumno> listarAlumno();
+
+	boolean registrarAlumno(Alumno alumno);
 
 }

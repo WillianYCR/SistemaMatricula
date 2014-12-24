@@ -15,5 +15,7 @@ public interface AlumnoDao {
   public List<Alumno> obtenerAlumnos();
   
   public List<Alumno> listarAlumnosAula();
+  
+  public List<Alumno> listarAlumno();
 
 }

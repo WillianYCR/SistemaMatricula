@@ -11,7 +11,17 @@
 	<div id="container" align="center">
 		<header> SISTEMA DE MANTENIMIENTO </header>
 
-		<nav>REGISTRAR NUEVA AULA</nav>
+		<nav>
+			<table width="95%" align="center" cellspacing="0"
+				cellpadding="0">
+				<tr align="center">
+					<th align="left">REGISTRAR NUEVA AULA</th>
+					<th align="right"><input type="submit" class="buttonMenu"
+						style="width: 150px" name="btnProceso" value="Listar aula"
+						onclick="window.location.href='aulaListarController.do'" /></th>
+				</tr>
+			</table>
+		</nav>
 
 		<section>
 			<form method="post" name="frmAulaRegistrar"
@@ -37,8 +47,6 @@
 					</tr>
 				</table>
 			</form>
-			<br> <a href="aulaListarController.do" class="alink"> Ver
-				listar de aulas...</a>
 		</section>
 		<footer>
 			<div>developercenter@starting.com</div>

@@ -40,6 +40,7 @@ body{
   -o-border-radius: 8px;
   padding-left: 5px;
   padding-right: 5px;
+  margin-bottom: 4px;
 }
 
 .button{
@@ -55,20 +56,46 @@ body{
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
   background: #4972B5;
-  background: linear-gradient(left, #4972B5, #618ACB);
-  background: -moz-linear-gradient(left, #4972B5, #618ACB);
-  background: -webkit-linear-gradient(left, #4972B5, #618ACB);
-  background: -o-linear-gradient(left, #4972B5, #618ACB);
+  background: linear-gradient(left, #084B8A, #045FB4);
+  background: -moz-linear-gradient(left, #084B8A, #045FB4);
+  background: -webkit-linear-gradient(left, #084B8A, #045FB4);
+  background: -o-linear-gradient(left, #084B8A, #045FB4);
   color: #FFFFFF;
 }
 .button:hover{
   background: #365D9D;
-  background: linear-gradient(left, #365D9D, #436CAD);
-  background: -moz-linear-gradient(left, #365D9D, #436CAD);
-  background: -webkit-linear-gradient(left, #365D9D, #436CAD);
-  background: -o-linear-gradient(left, #365D9D, #436CAD);
+  background: linear-gradient(left, #58D3F7, #A9E2F3);
+  background: -moz-linear-gradient(left, #58D3F7, #A9E2F3);
+  background: -webkit-linear-gradient(left, #58D3F7, #A9E2F3);
+  background: -o-linear-gradient(left, #58D3F7, #A9E2F3);
+  color: #0B173B;
+  border-color: #0B2F3A;
+}
+
+.buttonMenu{
+  border: 1px solid #DBE1EB;
+  font-size: 19px;
+  font-family: Arial, Verdana;
+  padding-left: 1px;
+  padding-right: 1px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  background: #4972B5;
+  background: linear-gradient(left, #0B6138, #0B6121);
+  background: -moz-linear-gradient(left, #0B6138, #0B6121);
+  background: -webkit-linear-gradient(left, #0B6138, #0B6121);
+  background: -o-linear-gradient(left, #0B6138, #0B6121);
   color: #FFFFFF;
-  border-color: #FBFFAD;
+}
+.buttonMenu:hover{
+  background: linear-gradient(left, #58D3F7, #A9E2F3);
+  background: -moz-linear-gradient(left, #58D3F7, #A9E2F3);
+  background: -webkit-linear-gradient(left, #58D3F7, #A9E2F3);
+  background: -o-linear-gradient(left, #58D3F7, #A9E2F3);
+  color: #0B3B24;
+  border-color: #0431B4;
 }
 
 .alink{
@@ -102,8 +129,8 @@ header{
     color: white;
 }
 nav{
-   background: -webkit-linear-gradient(left, #0033FF 10%, #0099FF 90%);
-   background: -moz-linear-gradient(left, #0033FF 10%, #0099FF 100%);
+   background: -webkit-linear-gradient(left, #08298A 10%, #0099FF 90%);
+   background: -moz-linear-gradient(left, #08298A 10%, #0099FF 90%);
    min-width: 950px;
    height: 30px;
    border-radius: 20px 20px 0px 0px;

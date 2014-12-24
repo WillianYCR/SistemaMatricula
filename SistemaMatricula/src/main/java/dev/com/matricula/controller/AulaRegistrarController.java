@@ -16,6 +16,7 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import dev.com.matricula.model.Aula;
 import dev.com.matricula.service.AulaService;
 
+//@WebServlet(name = "AulaRegistrarController", urlPatterns = { "/aulaRegistrarController.do" })
 public class AulaRegistrarController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -52,7 +53,7 @@ public class AulaRegistrarController extends HttpServlet {
 		try {
 			if (validarCampos()) {
 				Aula objAula = new Aula();
-				objAula.setTipo(sTipo);
+				objAula.setTipo(sTipo.toUpperCase());
 				objAula.setCapacidad(Short.parseShort(sCapacidad));
 
 				if (aulaService.registrarAula(objAula)) {

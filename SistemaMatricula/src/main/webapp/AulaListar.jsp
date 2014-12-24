@@ -1,4 +1,3 @@
-<%@page import="dev.com.matricula.controller.AulaListarController"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -13,11 +12,21 @@
 	<div id="container" align="center">
 		<header> LISTADO DE AULAS DISPONIBLES </header>
 
-		<nav>LISTA DE AULAS</nav>
+		<nav>
+			<table width="95%" align="center" cellspacing="0"
+				cellpadding="0">
+				<tr align="center">
+					<th align="left">LISTA DE AULAS</th>
+					<th align="right"><input type="submit" class="buttonMenu"
+						style="width: 150px" name="btnProceso" value="Registrar aula"
+						onclick="window.location.href='AulaRegistrar.jsp'" /></th>
+				</tr>
+			</table>
+		</nav>
 
 		<section>
 			<form method="post" name="frmAulaListar" action="" onsubmit="">
-				<table class="tableforma" border="1" width="500" bgcolor="#00BFFF"
+				<table class="tableforma" border="1" width="600" bgcolor="#00BFFF"
 					align="center" cellspacing="0" cellpadding="5">
 					<tr align="center">
 						<th>AULA</th>
@@ -40,8 +49,7 @@
 
 				</table>
 			</form>
-			<br> <a href="AulaRegistrar.jsp" class="alink"> Registrar
-				nueva aula...</a>
+			<br> <a href="AulaListar.jsp" class="alink"> Regresar inicio</a>
 		</section>
 		<footer>
 			<div>developercenter@starting.com</div>

@@ -64,4 +64,13 @@ public class AlumnoDaoImpl extends AbstractHibernateDao implements AlumnoDao {
     cerrarSesion();
     return alumnoList;
   }
+  
+  @Override
+  public List<Alumno> listarAlumno() {
+    abrirSesion();
+    criteria = session.createCriteria(Alumno.class);
+    alumnoList = criteria.list();
+    cerrarSesion();
+    return alumnoList;
+  }
 }

@@ -10,15 +10,15 @@ import dev.com.matricula.model.Seccion;
 @Repository
 public class SeccionDaoImpl extends AbstractHibernateDao implements SeccionDao {
 
-	private List<Seccion> aulaList;
+	private List<Seccion> seccionList;
 
 	@Override
 	public List<Seccion> listarSeccion() {
 		abrirSesion();
 		criteria = session.createCriteria(Seccion.class);
-		aulaList = criteria.list();
+		seccionList = criteria.list();
 		cerrarSesion();
-		return aulaList;
+		return seccionList;
 	}
 
 }

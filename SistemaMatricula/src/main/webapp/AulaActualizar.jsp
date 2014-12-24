@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +11,17 @@
 	<div id="container" align="center">
 		<header> SISTEMA MANTENIMIENTO </header>
 
-		<nav>ACTUALIZACION DE AULA</nav>
+		<nav>
+			<table width="95%" align="center" cellspacing="0"
+				cellpadding="0">
+				<tr align="center">
+					<th align="left">ACTUALIZACION DE AULA</th>
+					<th align="right"><input type="submit" class="buttonMenu"
+						style="width: 150px" name="btnProceso" value="Listar aula"
+						onclick="window.location.href='AulaListar.jsp'" /></th>
+				</tr>
+			</table>
+		</nav>
 
 		<section>
 			<%
@@ -56,9 +65,6 @@
 					</tr>
 				</table>
 			</form>
-
-			<br> <a href="AulaListar.jsp" class="alink">Ver lista de
-				aulas...</a>
 		</section>
 		<footer>
 			<div>Willian Cahuaya Ramos -- learning@wiyocara.com</div>
