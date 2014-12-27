@@ -13,13 +13,13 @@ import javax.swing.JOptionPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-import dev.com.matricula.service.SeccionService;
+import dev.com.matricula.service.ApoderadoService;
 
-public class SeccionListarController extends HttpServlet {
+public class ApoderadoListarController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
 	@Autowired
-	private SeccionService seccionService;
+	private ApoderadoService apoderadoService;
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
@@ -27,26 +27,23 @@ public class SeccionListarController extends HttpServlet {
 		SpringBeanAutowiringSupport.processInjectionBasedOnServletContext(this,
 				config.getServletContext());
 	}
-
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		//JOptionPane.showMessageDialog(null, "Logueo:SeccionListar doGet");
-		ArrayList seccionListar;
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ArrayList apoderadoListar;
 		try {
-			seccionListar = (ArrayList) seccionService.listarSeccion();
-			request.getSession().setAttribute("seccionListar", seccionListar);
+			apoderadoListar = (ArrayList) apoderadoService.listarApoderado();
+			request.getSession().setAttribute("apoderadoListar", apoderadoListar);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null,
 					"Error Mesagg: " + e.getMessage());
 		} finally {
-			request.getRequestDispatcher("SeccionListar.jsp").forward(request,
+			request.getRequestDispatcher("ApoderadoListar.jsp").forward(request,
 					response);
 		}
 	}
 
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		JOptionPane.showMessageDialog(null, "SeccionListar doPost");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		JOptionPane.showMessageDialog(null, "ApoderadoListar doPost");
 	}
 
 }

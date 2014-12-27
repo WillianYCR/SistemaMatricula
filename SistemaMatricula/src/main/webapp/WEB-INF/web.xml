@@ -60,6 +60,7 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>SeccionListarController</display-name>
     <servlet-name>SeccionListarController</servlet-name>
     <servlet-class>dev.com.matricula.controller.SeccionListarController</servlet-class>
   </servlet>
@@ -76,5 +77,25 @@
   <servlet-mapping>
     <servlet-name>AlumnoListarController</servlet-name>
     <url-pattern>/alumnoListar.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ApoderadoListarController</display-name>
+    <servlet-name>ApoderadoListarController</servlet-name>
+    <servlet-class>dev.com.matricula.controller.ApoderadoListarController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApoderadoListarController</servlet-name>
+    <url-pattern>/apoderadoListar.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SeccionListaControll</display-name>
+    <servlet-name>SeccionListaControll</servlet-name>
+    <servlet-class>dev.com.matricula.controller.SeccionListaControll</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SeccionListaControll</servlet-name>
+    <url-pattern>/seccionLista.do</url-pattern>
   </servlet-mapping>
 </web-app>

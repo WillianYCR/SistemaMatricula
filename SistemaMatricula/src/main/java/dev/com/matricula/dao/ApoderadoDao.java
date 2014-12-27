@@ -6,12 +6,13 @@ import dev.com.matricula.model.Apoderado;
 
 public interface ApoderadoDao {
 
-  boolean registrarApoderado(Apoderado apoderado);
+	boolean registrarApoderado(Apoderado apoderado);
 
-  public Integer obtenerUltimoIdApoderado();
+	public Integer obtenerUltimoIdApoderado();
 
-  public Apoderado obtenerDatoApoderado(int codigoApoderado);
+	public Apoderado obtenerDatoApoderado(int codigoApoderado);
 
-  public List<Apoderado> obtenerApoderados();
+	public List<Apoderado> obtenerApoderados();
 
+	public List<Apoderado> listarApoderado();
 }
