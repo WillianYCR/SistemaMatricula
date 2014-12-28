@@ -13,13 +13,13 @@ import javax.swing.JOptionPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-import dev.com.matricula.service.SeccionService;
+import dev.com.matricula.service.CursoService;
 
-public class SeccionListarController extends HttpServlet {
+public class CursoListarController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	private SeccionService seccionService;
+	private CursoService cursoService;
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
@@ -30,23 +30,22 @@ public class SeccionListarController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		//JOptionPane.showMessageDialog(null, "Logueo:SeccionListar doGet");
-		ArrayList seccionListar;
+		ArrayList cursoListar;
 		try {
-			seccionListar = (ArrayList) seccionService.listarSeccion();
-			request.getSession().setAttribute("seccionListar", seccionListar);
+			cursoListar = (ArrayList) cursoService.listarCurso();
+			request.getSession().setAttribute("cursoListar", cursoListar);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null,
 					"Error Mesagg: " + e.getMessage());
 		} finally {
-			request.getRequestDispatcher("SeccionListar.jsp").forward(request,
+			request.getRequestDispatcher("CursoListar.jsp").forward(request,
 					response);
 		}
 	}
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		JOptionPane.showMessageDialog(null, "SeccionListar doPost");
+		// TODO Auto-generated method stub
 	}
 
 }

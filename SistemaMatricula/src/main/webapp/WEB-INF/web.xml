@@ -98,4 +98,24 @@
     <servlet-name>SeccionListaControll</servlet-name>
     <url-pattern>/seccionLista.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DocenteListarController</display-name>
+    <servlet-name>DocenteListarController</servlet-name>
+    <servlet-class>dev.com.matricula.controller.DocenteListarController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DocenteListarController</servlet-name>
+    <url-pattern>/docenteListar.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CursoListarController</display-name>
+    <servlet-name>CursoListarController</servlet-name>
+    <servlet-class>dev.com.matricula.controller.CursoListarController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CursoListarController</servlet-name>
+    <url-pattern>/cursoListar.do</url-pattern>
+  </servlet-mapping>
 </web-app>
