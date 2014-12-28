@@ -67,7 +67,7 @@
 			</form>
 		</section>
 		<footer>
-			<div>Willian Cahuaya Ramos -- learning@wiyocara.com</div>
+			<div>developercenter@starting.com</div>
 		</footer>
 	</div>
 </body>

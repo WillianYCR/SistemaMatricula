@@ -118,4 +118,14 @@
     <servlet-name>CursoListarController</servlet-name>
     <url-pattern>/cursoListar.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogueoController</display-name>
+    <servlet-name>LogueoController</servlet-name>
+    <servlet-class>dev.com.matricula.controller.LogueoController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogueoController</servlet-name>
+    <url-pattern>/logueo.do</url-pattern>
+  </servlet-mapping>
 </web-app>
