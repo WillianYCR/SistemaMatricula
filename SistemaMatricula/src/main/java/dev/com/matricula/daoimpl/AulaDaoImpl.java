@@ -28,7 +28,7 @@ public class AulaDaoImpl extends AbstractHibernateDao implements AulaDao {
 		} finally {
 		}
 	}
-	
+
 	@Override
 	public boolean eliminarAula(Aula aula) {
 		try {
@@ -44,6 +44,7 @@ public class AulaDaoImpl extends AbstractHibernateDao implements AulaDao {
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public List<Aula> listarAula() {
 		abrirSesion();
 		criteria = session.createCriteria(Aula.class);

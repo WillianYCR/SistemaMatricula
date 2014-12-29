@@ -13,6 +13,7 @@ public class SeccionDaoImpl extends AbstractHibernateDao implements SeccionDao {
 	private List<Seccion> seccionList;
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public List<Seccion> listarSeccion() {
 		abrirSesion();
 		criteria = session.createCriteria(Seccion.class);

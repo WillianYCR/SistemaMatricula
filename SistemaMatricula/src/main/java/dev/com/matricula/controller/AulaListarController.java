@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +13,7 @@ import javax.swing.JOptionPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import dev.com.matricula.model.Aula;
 import dev.com.matricula.service.AulaService;
 
 //@WebServlet(name = "AulaListarController", urlPatterns = { "/aulaListarController.do" })
@@ -34,9 +34,9 @@ public class AulaListarController extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// JOptionPane.showMessageDialog(null, "Logueo:AulaListar doGet");
-		ArrayList aulaListar;
+		ArrayList<Aula> aulaListar;
 		try {
-			aulaListar = (ArrayList) aulaService.listarAula();
+			aulaListar = (ArrayList<Aula>) aulaService.listarAula();
 			request.getSession().setAttribute("aulaListar", aulaListar);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null,

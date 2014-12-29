@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import dev.com.matricula.model.Curso;
 import dev.com.matricula.service.CursoService;
 
 public class CursoListarController extends HttpServlet {
@@ -30,9 +31,9 @@ public class CursoListarController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		ArrayList cursoListar;
+		ArrayList<Curso> cursoListar;
 		try {
-			cursoListar = (ArrayList) cursoService.listarCurso();
+			cursoListar = (ArrayList<Curso>) cursoService.listarCurso();
 			request.getSession().setAttribute("cursoListar", cursoListar);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null,

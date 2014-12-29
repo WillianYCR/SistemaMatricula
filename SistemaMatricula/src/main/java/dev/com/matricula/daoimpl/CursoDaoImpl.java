@@ -13,6 +13,7 @@ public class CursoDaoImpl extends AbstractHibernateDao implements CursoDao {
 	private List<Curso> cursoList;
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public List<Curso> listarCurso() {
 		abrirSesion();
 		criteria = session.createCriteria(Curso.class);

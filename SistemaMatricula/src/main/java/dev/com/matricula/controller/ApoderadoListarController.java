@@ -13,11 +13,12 @@ import javax.swing.JOptionPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import dev.com.matricula.model.Apoderado;
 import dev.com.matricula.service.ApoderadoService;
 
 public class ApoderadoListarController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	@Autowired
 	private ApoderadoService apoderadoService;
 
@@ -27,22 +28,26 @@ public class ApoderadoListarController extends HttpServlet {
 		SpringBeanAutowiringSupport.processInjectionBasedOnServletContext(this,
 				config.getServletContext());
 	}
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList apoderadoListar;
+
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		ArrayList<Apoderado> apoderadoListar;
 		try {
-			apoderadoListar = (ArrayList) apoderadoService.listarApoderado();
-			request.getSession().setAttribute("apoderadoListar", apoderadoListar);
+			apoderadoListar = (ArrayList<Apoderado>) apoderadoService
+					.listarApoderado();
+			request.getSession().setAttribute("apoderadoListar",
+					apoderadoListar);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null,
 					"Error Mesagg: " + e.getMessage());
 		} finally {
-			request.getRequestDispatcher("ApoderadoListar.jsp").forward(request,
-					response);
+			request.getRequestDispatcher("ApoderadoListar.jsp").forward(
+					request, response);
 		}
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		JOptionPane.showMessageDialog(null, "ApoderadoListar doPost");
 	}
 

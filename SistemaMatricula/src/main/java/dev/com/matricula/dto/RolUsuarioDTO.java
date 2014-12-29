@@ -1,42 +1,59 @@
 package dev.com.matricula.dto;
 
+import dev.com.matricula.model.RolUsuario;
+import dev.com.matricula.util.Consola;
+
 public class RolUsuarioDTO {
 
-  private Integer id;
-  private UsuarioDTO usuario;
-  private RolDTO rol;
-  private Character estado;
+	private Integer id;
+	private UsuarioDTO usuario;
+	private RolDTO rol;
+	private Character estado;
 
-  public Integer getId() {
-    return id;
-  }
+	public RolUsuarioDTO() {
+	}
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+	public RolUsuarioDTO(RolUsuario rolUsuario) {
+		if (rolUsuario != null) {
+			this.id = rolUsuario.getIdRolUsuario();
+			this.usuario = new UsuarioDTO(rolUsuario.getUsuario());
+			this.rol = new RolDTO(rolUsuario.getRol());
+			this.estado = rolUsuario.getEstado();
+		} else {
+			Consola.objetoNull(RolUsuario.class.getName());
+		}
+	}
 
-  public UsuarioDTO getUsuario() {
-    return usuario;
-  }
+	public Integer getId() {
+		return id;
+	}
 
-  public void setUsuario(UsuarioDTO usuario) {
-    this.usuario = usuario;
-  }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-  public RolDTO getRol() {
-    return rol;
-  }
+	public UsuarioDTO getUsuario() {
+		return usuario;
+	}
 
-  public void setRol(RolDTO rol) {
-    this.rol = rol;
-  }
+	public void setUsuario(UsuarioDTO usuario) {
+		this.usuario = usuario;
+	}
 
-  public Character getEstado() {
-    return estado;
-  }
+	public RolDTO getRol() {
+		return rol;
+	}
 
-  public void setEstado(Character estado) {
-    this.estado = estado;
-  }
+	public void setRol(RolDTO rol) {
+		this.rol = rol;
+	}
+
+	public Character getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Character estado) {
+		this.estado = estado;
+	}
 
 }

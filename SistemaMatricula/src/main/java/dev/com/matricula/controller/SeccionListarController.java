@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import dev.com.matricula.model.Seccion;
 import dev.com.matricula.service.SeccionService;
 
 public class SeccionListarController extends HttpServlet {
@@ -30,10 +31,10 @@ public class SeccionListarController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		//JOptionPane.showMessageDialog(null, "Logueo:SeccionListar doGet");
-		ArrayList seccionListar;
+		// JOptionPane.showMessageDialog(null, "Logueo:SeccionListar doGet");
+		ArrayList<Seccion> seccionListar;
 		try {
-			seccionListar = (ArrayList) seccionService.listarSeccion();
+			seccionListar = (ArrayList<Seccion>) seccionService.listarSeccion();
 			request.getSession().setAttribute("seccionListar", seccionListar);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null,

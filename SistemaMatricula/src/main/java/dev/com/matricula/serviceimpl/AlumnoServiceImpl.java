@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import dev.com.matricula.dao.AlumnoDao;
 import dev.com.matricula.model.Alumno;
-import dev.com.matricula.model.Seccion;
 import dev.com.matricula.service.AlumnoService;
 
 @Service

@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -72,7 +71,7 @@ public class AulaActualizarController extends HttpServlet {
 						request.getRequestDispatcher("AulaListar.jsp").forward(
 								request, response);
 					}
-				} else if (nameBoton.equals("Eliminar")){
+				} else if (nameBoton.equals("Eliminar")) {
 					if (aulaService.eliminarAula(objAula)) {
 						JOptionPane.showMessageDialog(null,
 								"Eliminacion exitosa!!!");

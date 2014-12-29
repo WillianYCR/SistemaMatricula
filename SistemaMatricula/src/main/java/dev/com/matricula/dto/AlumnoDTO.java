@@ -1,107 +1,140 @@
 package dev.com.matricula.dto;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import dev.com.matricula.model.Alumno;
+import dev.com.matricula.util.Consola;
 import dev.com.matricula.util.enums.SexoEnum;
 
 public class AlumnoDTO {
 
-  private Integer id;
-  private String nombres;
-  private String apellidoPaterno;
-  private String apellidoMaterno;
-  private Date fechaNacimiento;
-  private String telefono;
-  private String dni;
-  private char sexo;
-  private String email;
+	private Integer id;
+	private String nombres;
+	private String apellidoPaterno;
+	private String apellidoMaterno;
+	private Date fechaNacimiento;
+	private String telefono;
+	private String dni;
+	private char sexo;
+	private String email;
 
-  public AlumnoDTO() {
-  }
+	public AlumnoDTO() {
+	}
 
-  public Integer getId() {
-    return id;
-  }
+	public AlumnoDTO(Alumno alumno) {
+		if (alumno != null) {
+			this.id = alumno.getIdAlumno();
+			this.nombres = alumno.getNombre();
+			this.apellidoPaterno = alumno.getApellidoPaterno();
+			this.apellidoMaterno = alumno.getApellidoMaterno();
+			this.fechaNacimiento = alumno.getFechaNacimiento();
+			this.telefono = alumno.getTelefono();
+			this.dni = alumno.getDni();
+			this.sexo = alumno.getSexo();
+			this.email = alumno.getEmail();
+		} else {
+			Consola.objetoNull(Alumno.class.getName());
+		}
+	}
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+	public List<AlumnoDTO> listaAlumnoDTO(List<Alumno> alumnoLista) {
+		List<AlumnoDTO> alumnolistaDto = new ArrayList<AlumnoDTO>();
+		// TODO: Es valido comparar con null ?
+		if (alumnoLista == null || alumnoLista.isEmpty()) {
+			for (Alumno alumno : alumnoLista) {
+				alumnolistaDto.add(new AlumnoDTO(alumno));
+			}
+		} else {
+			Consola.listaVaciaONull(Alumno.class.getName());
+		}
+		return alumnolistaDto;
+	}
 
-  public String getNombres() {
-    return nombres;
-  }
+	public Integer getId() {
+		return id;
+	}
 
-  public void setNombres(String nombre) {
-    this.nombres = nombre;
-  }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-  public String getApellidoPaterno() {
-    return apellidoPaterno;
-  }
+	public String getNombres() {
+		return nombres;
+	}
 
-  public void setApellidoPaterno(String apellidoPaterno) {
-    this.apellidoPaterno = apellidoPaterno;
-  }
+	public void setNombres(String nombre) {
+		this.nombres = nombre;
+	}
 
-  public String getApellidoMaterno() {
-    return apellidoMaterno;
-  }
+	public String getApellidoPaterno() {
+		return apellidoPaterno;
+	}
 
-  public void setApellidoMaterno(String apellidoMaterno) {
-    this.apellidoMaterno = apellidoMaterno;
-  }
+	public void setApellidoPaterno(String apellidoPaterno) {
+		this.apellidoPaterno = apellidoPaterno;
+	}
 
-  public Date getFechaNacimiento() {
-    return fechaNacimiento;
-  }
+	public String getApellidoMaterno() {
+		return apellidoMaterno;
+	}
 
-  public void setFechaNacimiento(Date fechaNacimiento) {
-    this.fechaNacimiento = fechaNacimiento;
-  }
+	public void setApellidoMaterno(String apellidoMaterno) {
+		this.apellidoMaterno = apellidoMaterno;
+	}
 
-  public String getTelefono() {
-    return telefono;
-  }
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
 
-  public void setTelefono(String telefono) {
-    this.telefono = telefono;
-  }
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
 
-  public String getDni() {
-    return dni;
-  }
+	public String getTelefono() {
+		return telefono;
+	}
 
-  public void setDni(String dni) {
-    this.dni = dni;
-  }
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
 
-  public char getSexo() {
-    return sexo;
-  }
+	public String getDni() {
+		return dni;
+	}
 
-  public void setSexo(char sexo) {
-    this.sexo = sexo;
-  }
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
 
-  public String getEmail() {
-    return email;
-  }
+	public char getSexo() {
+		return sexo;
+	}
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+	public void setSexo(char sexo) {
+		this.sexo = sexo;
+	}
 
-  public String getNombreCompleto() {
-    return nombres + " " + apellidoPaterno + " " + apellidoPaterno;
-  }
+	public String getEmail() {
+		return email;
+	}
 
-  public String getNombreSexo() {
-    for (SexoEnum temp : SexoEnum.values()) {
-      if (sexo == temp.getCodigo()) {
-        return temp.getDescripcion();
-      }
-    }
-    return "";
-  }
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getNombreCompleto() {
+		return nombres + " " + apellidoPaterno + " " + apellidoPaterno;
+	}
+
+	public String getNombreSexo() {
+		for (SexoEnum temp : SexoEnum.values()) {
+			if (sexo == temp.getCodigo()) {
+				return temp.getDescripcion();
+			}
+		}
+		return "";
+	}
 
 }

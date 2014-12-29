@@ -3,7 +3,6 @@ package dev.com.matricula.test;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,22 +18,22 @@ import dev.com.matricula.model.Horario;
 @ContextConfiguration("classpath:context/application-context.xml")
 public class TestViewQuery {
 
-  @Autowired
-  private DocenteDao docenteDao;
+	@Autowired
+	private DocenteDao docenteDao;
 
-  @Autowired
-  private HorarioDao horarioDao;
+	@Autowired
+	private HorarioDao horarioDao;
 
-  @Test
-  public void obtenerAlgunosDatosDeDocente() {
-    List<Docente> docentes = docenteDao.obtenerAlgunosDatosDocente();
-    Assert.assertNotNull(docentes);
-  }
+	@Test
+	public void obtenerAlgunosDatosDeDocente() {
+		List<Docente> docentes = docenteDao.obtenerAlgunosDatosDocente();
+		Assert.assertNotNull(docentes);
+	}
 
-  @Test
-  public void obtenerHorarios() {
-    List<Horario> horarios = horarioDao.obtenerHorarioConDatos();
-    Assert.assertNotNull(horarios);
-  }
+	@Test
+	public void obtenerHorarios() {
+		List<Horario> horarios = horarioDao.obtenerHorarioConDatos();
+		Assert.assertNotNull(horarios);
+	}
 
 }

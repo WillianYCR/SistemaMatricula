@@ -1,64 +1,79 @@
 package dev.com.matricula.dto;
 
+import dev.com.matricula.model.Usuario;
+import dev.com.matricula.util.Consola;
+
 public class UsuarioDTO {
 
-  private Integer id;
-  private String nombres;
-  private String dni;
-  private String login;
-  private String clave;
-  private Character estado;
+	private Integer id;
+	private String nombres;
+	private String dni;
+	private String login;
+	private String clave;
+	private Character estado;
 
-  // private Set rolusuarios = new HashSet(0);
-  // private Set usuariodocentes = new HashSet(0);
-  // private Set usuarioalumnos = new HashSet(0);
+	public UsuarioDTO() {
+	}
 
-  public Integer getId() {
-    return id;
-  }
+	public UsuarioDTO(Usuario usuario) {
+		if (usuario != null) {
+			this.id = usuario.getIdUsuario();
+			this.nombres = usuario.getNombre();
+			this.dni = usuario.getDni();
+			this.login = usuario.getLogin();
+			this.clave = usuario.getClave();
+			this.estado = usuario.getEstado();
+		} else {
+			Consola.objetoNull(Usuario.class.getName());
+		}
+	}
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+	public Integer getId() {
+		return id;
+	}
 
-  public String getNombres() {
-    return nombres;
-  }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-  public void setNombres(String nombres) {
-    this.nombres = nombres;
-  }
+	public String getNombres() {
+		return nombres;
+	}
 
-  public String getDni() {
-    return dni;
-  }
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
 
-  public void setDni(String dni) {
-    this.dni = dni;
-  }
+	public String getDni() {
+		return dni;
+	}
 
-  public String getLogin() {
-    return login;
-  }
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
 
-  public void setLogin(String login) {
-    this.login = login;
-  }
+	public String getLogin() {
+		return login;
+	}
 
-  public String getClave() {
-    return clave;
-  }
+	public void setLogin(String login) {
+		this.login = login;
+	}
 
-  public void setClave(String clave) {
-    this.clave = clave;
-  }
+	public String getClave() {
+		return clave;
+	}
 
-  public Character getEstado() {
-    return estado;
-  }
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
 
-  public void setEstado(Character estado) {
-    this.estado = estado;
-  }
+	public Character getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Character estado) {
+		this.estado = estado;
+	}
 
 }

@@ -57,6 +57,7 @@ public class AlumnoDaoImpl extends AbstractHibernateDao implements AlumnoDao {
   }
   
   @Override
+  @SuppressWarnings("unchecked")
   public List<Alumno> listarAlumnosAula() {
     abrirSesion();
     criteria = session.createCriteria(Alumno.class);
@@ -66,6 +67,7 @@ public class AlumnoDaoImpl extends AbstractHibernateDao implements AlumnoDao {
   }
   
   @Override
+  @SuppressWarnings("unchecked")
   public List<Alumno> listarAlumno() {
     abrirSesion();
     criteria = session.createCriteria(Alumno.class);

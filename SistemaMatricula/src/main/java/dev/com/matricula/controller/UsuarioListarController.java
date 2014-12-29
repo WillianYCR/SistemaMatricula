@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,7 +34,7 @@ public class UsuarioListarController extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<Usuario> usuarioListar;
 		try {
-			usuarioListar = (ArrayList) usuarioService.listarUsuario();
+			usuarioListar = (ArrayList<Usuario>) usuarioService.listarUsuario();
 			request.getSession().setAttribute("usuarioListar", usuarioListar);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null,

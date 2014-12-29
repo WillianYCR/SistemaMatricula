@@ -14,7 +14,6 @@ public class UsuarioDaoImpl extends AbstractHibernateDao implements UsuarioDao {
 	private int entero;
 	private String ID_USUARIO = "idUsuario";
 	private String LOGIN_USUARIO = "login";
-	private String CLAVE_USUARIO = "clave";
 	private Usuario usuario;
 	private List<Usuario> usuarioList;
 
