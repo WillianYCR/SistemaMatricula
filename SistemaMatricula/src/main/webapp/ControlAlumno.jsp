@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div id="container" align="center">
-		<header> INFORMACION DE ALUMNO </header>
+	<header class="divCabeceraAlumno">INFORMACION DEL ALUMNO </header>
 
 		<nav>
 			<table width="95%" align="center" cellspacing="0" cellpadding="0">
@@ -27,8 +27,7 @@
 				<tr>
 					<td width="150px">
 						<div class="divMenuIzquierdo">
-							<form method="post" name="frmControlAlumnoMenu" action=""
-								onsubmit="">
+							<form method="post" name="frmControlAlumnoMenu" action="">
 								<table class="tableforma" cellspacing="0" cellpadding="1">
 									<tr>
 										<th><input type="submit" class="buttonMenu"
@@ -68,5 +67,6 @@
 		<footer>
 			<div>developercenter@starting.com</div>
 		</footer>
+	</div>
 </body>
 </html>

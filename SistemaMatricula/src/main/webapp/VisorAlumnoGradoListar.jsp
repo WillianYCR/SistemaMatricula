@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ALUMNOS-GRADO</title>
-<link rel="stylesheet" href="css/EstiloMantenimiento.css">
+<link rel="stylesheet" href="css/EstiloControl.css">
 </head>
 <body>
 	<div id="container" align="center">
